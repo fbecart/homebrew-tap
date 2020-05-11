@@ -10,4 +10,8 @@ class Zinoma < Formula
   def install
     bin.install "zinoma"
   end
+
+  test do
+    system "#{bin}/zinoma --version"
+  end
 end
