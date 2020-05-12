@@ -1,0 +1,27 @@
+class Zinoma < Formula
+  version '<%= version %>'
+  desc "Make your build flow incremental"
+  homepage "https://github.com/fbecart/zinoma"
+
+  if OS.mac?
+    <%- url = "https://github.com/fbecart/zinoma/releases/download/#{version}/zinoma-#{version}-x86_64-apple-darwin.tar.gz" -%>
+    url "<%= url %>"
+    sha256 "<%= `curl -sfSL #{url} | sha256sum`.partition(" ").first %>"
+  elsif OS.linux?
+    <%- url = "https://github.com/fbecart/zinoma/releases/download/#{version}/zinoma-#{version}-x86_64-unknown-linux-musl.tar.gz" -%>
+    url "<%= url %>"
+    sha256 "<%= `curl -sfSL #{url} | sha256sum`.partition(" ").first %>"
+  end
+
+  def install
+    bin.install "zinoma"
+
+    bash_completion.install "complete/zinoma.bash"
+    zsh_completion.install "complete/_zinoma"
+    fish_completion.install "complete/zinoma.fish"
+  end
+
+  test do
+    system "#{bin}/zinoma --version"
+  end
+end
