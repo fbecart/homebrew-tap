@@ -1,0 +1,19 @@
+name: update-zinoma-2
+on:
+  pull_request:
+jobs:
+  update-zinoma:
+    runs-on: ubuntu-latest
+    env:
+      ZINOMA_VERSION: 0.4.2
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Update formula
+        run: erb -T - version=${{ env.ZINOMA_VERSION }} FormulaTemplates/zinoma.rb.erb > HomebrewFormula/zinoma.rb
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4.2.0
+        with:
+          branch: master
+          commit_message: Update Žinoma to version ${{ env.ZINOMA_VERSION }}
+          tagging_message: zinoma-${{ env.ZINOMA_VERSION }}
