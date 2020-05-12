@@ -10,12 +10,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Setup Ruby
-        uses: actions/setup-ruby@v1
       - name: Update formula
         run: erb -T - version=${{ env.ZINOMA_VERSION }} FormulaTemplates/zinoma.rb.erb > HomebrewFormula/zinoma.rb
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4.2.0
         with:
-          commit_message: "Update Žinoma to version ${{ env.ZINOMA_VERSION }}"
-          tagging_message: 'zinoma-${{ env.ZINOMA_VERSION }}'
+          branch: master
+          commit_message: Update Žinoma to version ${{ env.ZINOMA_VERSION }}
+          tagging_message: zinoma-${{ env.ZINOMA_VERSION }}
+          commit_user_name: Florent Bécart
