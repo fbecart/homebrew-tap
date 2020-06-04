@@ -1,4 +1,11 @@
-# homebrew-tap
+# fbecart's Homebrew tap
 
-Homebrew tap for fbecart.
+## Available formulas
 
+### [Žinoma](https://github.com/fbecart/zinoma/blob/master/README.md)
+
+Installation:
+
+```shell script
+brew install fbecart/tap/zinoma
+```
