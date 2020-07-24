@@ -1,14 +1,14 @@
 class Zinoma < Formula
-  version '0.18.2'
+  version '0.19.0'
   desc "Make your build flow incremental"
   homepage "https://github.com/fbecart/zinoma"
 
   if OS.mac?
-    url "https://github.com/fbecart/zinoma/releases/download/0.18.2/zinoma-0.18.2-x86_64-apple-darwin.tar.gz"
-    sha256 "274956eaf2846400dc07f8aba11e67366f185905cd2c3e20dca2768c097b1545"
+    url "https://github.com/fbecart/zinoma/releases/download/0.19.0/zinoma-0.19.0-x86_64-apple-darwin.tar.gz"
+    sha256 "a003c631844eaea50e2ec290add444252bde1ddefdc98a899ada6563dfb9731b"
   elsif OS.linux?
-    url "https://github.com/fbecart/zinoma/releases/download/0.18.2/zinoma-0.18.2-x86_64-unknown-linux-musl.tar.gz"
-    sha256 "2030709b05d2d668b0716a5e90d83045ac6ff4c300212a4d20255b8888f4bcf5"
+    url "https://github.com/fbecart/zinoma/releases/download/0.19.0/zinoma-0.19.0-x86_64-unknown-linux-musl.tar.gz"
+    sha256 "cf27bc5106464e4f2dc9eb7f67e011572f8e8ebdaec0a5b5189df11d9ee7e45e"
   end
 
   def install
